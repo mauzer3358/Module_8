@@ -9,7 +9,7 @@ dirs = [d for d in os.listdir() if os.path.isdir(d)]
 
 for root, dirs, files in os.walk(dirctory):
   for file in files:
-    filepath = os.path.join(dirctory,file)
+    filepath = os.path.join(root,file)
     filetime = os.path.getmtime(filepath)
     formatted_time = time.strftime("%d.%m.%Y %H:%M", time.localtime(filetime))
     filesize = os.path.getsize(filepath)
