@@ -1,11 +1,10 @@
 class Car:
     def __init__(self, model, vin, numbers):
         self.model = model
-        self.__vin = vin
-        self.__numbers = numbers
-
-        self.__is_valid_vin(self.__vin)
-        self.__is_valid_numbers(self.__numbers)
+        if self.__is_valid_vin(vin):
+            self.__vin = vin
+        if self.__is_valid_numbers(numbers):
+            self.__numbers = numbers
 
 #    Метод __is_valid_vin(vin_number) - принимает vin_number и проверяет его на корректность.
     #    Возвращает True, если корректный, в других случаях выбрасывает исключение.Уровень доступа private.
